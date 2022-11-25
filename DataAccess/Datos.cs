@@ -180,7 +180,7 @@ namespace DataAccess
                         Ciudad = read["ciudad"].ToString(),
                         FechaNacimento = DateTime.Parse(read["FechaNacimento"].ToString()),
                         Edad = int.Parse(read["edad"].ToString()),
-                        cantidadEventos = int.Parse(read["cantidadEventos"].ToString())
+                        CantidadEventos = int.Parse(read["cantidadEventos"].ToString())
                     };
                     clientes.Add(cliente);
                 }

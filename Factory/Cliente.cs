@@ -32,7 +32,14 @@ namespace Factory
 		public int Edad { get; set; }
 
 		[Display(Name = "Eventos asignados")]
+		public int CantidadEventos { get; set; }
 
-		public int cantidadEventos { get; set; }
+		public string NombreCompleto
+		{
+			get
+			{
+				return Nombre + " " + Apellido;
+			}
+		}
 	}
 }

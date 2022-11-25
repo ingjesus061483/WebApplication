@@ -44,8 +44,11 @@ namespace WebEventos.Controllers
             Utilities.url = $"{url}/Eventos";
             List<Evento> eventos = await Utilities.GetListDataAPIAsync<Evento>();
            var evento= eventos.Find (x => x.Id == id);
+            Utilities.url = $"{url}/Cliente";
             List<Cliente> clientes = await Utilities.GetListDataAPIAsync<Cliente>();
-            var cliente = clientes.Find(x => x.Id == evento .Id );
+            var cliente = clientes.Find(x => x.Id == evento .IdCliente );
+            ViewBag.Cliente = cliente;
+            ViewBag.Evento = evento;
             return View();
         }       
     }

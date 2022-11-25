@@ -1,0 +1,52 @@
+﻿@using Factory;
+@{
+    ViewBag.Title = "Export";
+    Cliente cliente = ViewBag.Cliente;
+    Evento evento = ViewBag.Evento;
+
+}
+
+<h2>Datos del cliente</h2>
+<table cellpadding="10">
+    <tr>
+        <td><strong>Identificacion:</strong></td>
+        <td>@cliente.Identificacion</td>
+        <td><strong>Nombre completo:</strong></td>
+        <td>@cliente.NombreCompleto</td>
+        <td><strong> Telefono:</strong></td>
+        <td>@cliente.Telefono</td>
+    </tr>
+    <tr>
+        <td><strong> Correo:</strong></td>
+        <td>@cliente.Correo</td>
+        <td><strong>Departamento:</strong></td>
+        <td>@cliente.Deepartamento  </td>
+        <td><strong>Ciudad:</strong></td>
+        <td>@cliente.Ciudad    </td>
+    </tr>
+    <tr>
+        <td><strong> Edad:</strong></td>
+        <td>@cliente.Edad  </td>
+    </tr>
+</table>
+<h2>Datos del evento</h2>
+<table>
+    <tr>
+        <td><strong>Motivo:</strong></td>
+        <td>@evento.Motivo  </td>
+        <td><strong>Fecha</strong></td>
+        <td>@evento.FechaEvento   </td>
+        <td><strong> Cantidad de personas:</strong></td>
+        <td>@evento.CantidadPersonas    </td>
+    </tr>
+    <tr>
+        <td><strong> Estado:</strong></td>
+        <td>@evento.Estado   </td>
+        <td><strong>Observaciones:</strong></td>
+        <td>@evento.Observaciones</td>        
+    </tr>    
+</table>
+
+
+
+
