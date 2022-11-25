@@ -1,0 +1,6 @@
+C:\Users\jesus\Documents\github\WebApplication\Factory\bin\Debug\Factory.dll
+C:\Users\jesus\Documents\github\WebApplication\Factory\bin\Debug\Factory.pdb
+C:\Users\jesus\Documents\github\WebApplication\Factory\obj\Debug\Factory.csproj.CoreCompileInputs.cache
+C:\Users\jesus\Documents\github\WebApplication\Factory\obj\Debug\Factory.dll
+C:\Users\jesus\Documents\github\WebApplication\Factory\obj\Debug\Factory.pdb
+C:\Users\jesus\Documents\github\WebApplication\Factory\obj\Debug\Factory.csprojAssemblyReference.cache

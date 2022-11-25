@@ -1,0 +1,88 @@
+﻿@{
+    string message = "";
+    int tipo = 0;
+    if (TempData["tipo"] != null)
+    {
+        tipo = (int)TempData["tipo"];
+    }
+    if (TempData["message"] != null)
+    {
+        message = TempData["message"].ToString();
+    }
+    string nombreaplicacion = Utilities.App_Name;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <link rel="stylesheet" href="~/Content/dataTable.css" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/jquery-ui")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink(nombreaplicacion, "Index", "Eventos", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+                    <li>@Html.ActionLink("Eventos", "Index", "Eventos")</li>
+                    <li>@Html.ActionLink("Reportes", "Index", "Reportes")</li>
+
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="~/Scripts/datatable.js"></script>
+
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        var tipo =@tipo;
+        var message = "@message";
+        switch (tipo )
+        {
+            case 1: {
+                alert(message);
+
+  //              alertify.success(message);
+                break;
+            }
+            case 2: {
+                alert(message);
+
+//                alertify.error(message);
+                break;
+            }
+            case 3: {
+                alert(message);
+            }
+        }
+    </script>
+</body>
+</html>

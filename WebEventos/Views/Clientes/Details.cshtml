@@ -1,0 +1,140 @@
+﻿@using Factory;
+@model Cliente
+
+@{
+    ViewBag.Title = "Details";
+    List<Evento> eventos = ViewBag.eventos;
+
+}
+
+<h2>Eventos de cliente</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Deepartamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deepartamento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edad) años
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cantidadEventos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidadEventos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (Model.cantidadEventos > 0)
+    {
+        <table class="table">
+            <tr>
+                <th>
+                    Fecha Evento
+                </th>
+                <th>
+                    Motivo
+                </th>
+
+                <th>
+                    Cantidad Personas
+                </th>
+                <th>
+                    Observaciones
+                </th>
+                <th>
+                    Estado
+                </th>
+            </tr>
+
+            @foreach (var item in eventos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaEvento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Motivo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CantidadPersonas)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Observaciones)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                                      
+                </tr>
+            }
+        </table>
+    }
+
+    @Html.ActionLink("Regresar al listado", "Index", null, new { @class = "btn btn-primary" })
+</p>
